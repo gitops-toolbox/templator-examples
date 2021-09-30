@@ -1,0 +1,21 @@
+{% set comma = joiner() %}
+{
+    "locations": [
+        {% for repo, templates in context.repos %}
+            {% for template in templates.keys() %}
+            {{comma()}}{
+                "contextSelector": "repos.{{repo}}",
+                "template": "{{template}}"
+            }
+            {% endfor %}
+            {% for template in context.common_templates.keys() %}
+            {% if template not in templates %}
+            {{comma()}}{
+                "contextSelector": "repos.{{repo}}",
+                "template": "{{template}}"
+            }
+            {% endif %}
+            {% endfor %}
+        {% endfor %}
+    ]
+}

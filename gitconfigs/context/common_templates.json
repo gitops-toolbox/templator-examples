@@ -1,0 +1,5 @@
+{
+  "common_templates": {
+    "github/workflows/npm-test.yaml": true
+  }
+}
