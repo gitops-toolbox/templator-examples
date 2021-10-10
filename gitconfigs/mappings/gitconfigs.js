@@ -1,12 +1,12 @@
-module.exports.render = function (data) {
+module.exports.render = function (context) {
   const mapping = {
     locations: [],
   };
 
-  for (repo of Object.keys(data.context.repos)) {
+  for (repo of Object.keys(context.repos)) {
     const templates = Object.assign(
-      data.context.repos[repo],
-      data.context.common_templates,
+      context.repos[repo],
+      context.common_templates,
     );
 
     for (const template of Object.keys(templates)) {
@@ -21,6 +21,16 @@ module.exports.render = function (data) {
           },
         },
       });
+    }
+  }
+
+  if (process.env.TO_FS === "true") {
+    for (const location of mapping.locations) {
+      location.destination.type = "tpd-filesystem";
+      location.destination.params.baseDir = location.destination.params.repo.replace(
+        "gitops-toolbox",
+        "../..",
+      );
     }
   }
 

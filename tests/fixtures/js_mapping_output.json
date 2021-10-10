@@ -1,0 +1,77 @@
+{
+  "mapping": {
+    "locations": [
+      {
+        "contextSelector": "repos.templator",
+        "template": "github/workflows/npm-test.yaml.njk",
+        "destination": {
+          "type": "tpd-github",
+          "params": {
+            "repo": "gitops-toolbox/templator",
+            "filepath": ".github/workflows/npm-test.yaml"
+          }
+        },
+        "tags": {},
+        "templateData": {
+          "context": {
+            "github/workflows/npm-test.yaml": true
+          },
+          "meta": {
+            "__mapping": "mappings/gitconfigs.js",
+            "__template": "templates/github/workflows/npm-test.yaml.njk"
+          }
+        }
+      },
+      {
+        "contextSelector": "repos.config-loader",
+        "template": "github/workflows/npm-test.yaml.njk",
+        "destination": {
+          "type": "tpd-github",
+          "params": {
+            "repo": "gitops-toolbox/config-loader",
+            "filepath": ".github/workflows/npm-test.yaml"
+          }
+        },
+        "tags": {},
+        "templateData": {
+          "context": {},
+          "meta": {
+            "__mapping": "mappings/gitconfigs.js",
+            "__template": "templates/github/workflows/npm-test.yaml.njk"
+          }
+        }
+      },
+      {
+        "contextSelector": "repos.github-tools",
+        "template": "github/workflows/npm-test.yaml.njk",
+        "destination": {
+          "type": "tpd-github",
+          "params": {
+            "repo": "gitops-toolbox/github-tools",
+            "filepath": ".github/workflows/npm-test.yaml"
+          }
+        },
+        "tags": {},
+        "templateData": {
+          "context": {},
+          "meta": {
+            "__mapping": "mappings/gitconfigs.js",
+            "__template": "templates/github/workflows/npm-test.yaml.njk"
+          }
+        }
+      }
+    ]
+  },
+  "context": {
+    "common_templates": {
+      "github/workflows/npm-test.yaml": true
+    },
+    "repos": {
+      "templator": {
+        "github/workflows/npm-test.yaml": true
+      },
+      "config-loader": {},
+      "github-tools": {}
+    }
+  }
+}
