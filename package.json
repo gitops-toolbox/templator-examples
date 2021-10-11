@@ -1,0 +1,34 @@
+{
+  "name": "templator-examples",
+  "version": "0.0.1",
+  "description": "\"Contains a series of mappings and templates examples for @gitops-toolbox/templator\"",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "tap",
+    "tp": "tp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gitops-toolbox/templator-examples.git"
+  },
+  "keywords": [
+    "templator",
+    "examples",
+    "mappings",
+    "templates"
+  ],
+  "author": "Luca Lanziani (luca@lanziani.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gitops-toolbox/templator-examples/issues"
+  },
+  "homepage": "https://github.com/gitops-toolbox/templator-examples#readme",
+  "devDependencies": {
+    "@gitops-toolbox/templator": "^0.4.0",
+    "tap": "^15.0.10"
+  },
+  "tap": {
+    "check-coverage": false
+  }
+}

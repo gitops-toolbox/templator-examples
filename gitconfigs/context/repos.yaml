@@ -1,0 +1,5 @@
+repos:
+  templator:
+    github/workflows/npm-test.yaml: true
+  config-loader: {}
+  github-tools: {}

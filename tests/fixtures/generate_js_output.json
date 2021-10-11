@@ -1,0 +1,66 @@
+{
+  "locations": [
+    {
+      "contextSelector": "repos.templator",
+      "template": "github/workflows/npm-test.yaml.njk",
+      "destination": {
+        "type": "tpd-github",
+        "params": {
+          "repo": "gitops-toolbox/templator",
+          "filepath": ".github/workflows/npm-test.yaml"
+        }
+      },
+      "tags": {},
+      "templateData": {
+        "context": {
+          "github/workflows/npm-test.yaml": true
+        },
+        "meta": {
+          "__mapping": "mappings/gitconfigs.js",
+          "__template": "templates/github/workflows/npm-test.yaml.njk"
+        }
+      },
+      "renderedTemplate": "name: pull-request\non:\n  pull_request:\n    branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        node: [ '14', '16']\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n      - name: Set up node \n        uses: actions/setup-node@v2\n        with:\n          node-version: ${{ matrix.node }}\n      - name: Install dependencies\n        run: npm install\n      - name: Run tests\n        run: npm test\n"
+    },
+    {
+      "contextSelector": "repos.config-loader",
+      "template": "github/workflows/npm-test.yaml.njk",
+      "destination": {
+        "type": "tpd-github",
+        "params": {
+          "repo": "gitops-toolbox/config-loader",
+          "filepath": ".github/workflows/npm-test.yaml"
+        }
+      },
+      "tags": {},
+      "templateData": {
+        "context": {},
+        "meta": {
+          "__mapping": "mappings/gitconfigs.js",
+          "__template": "templates/github/workflows/npm-test.yaml.njk"
+        }
+      },
+      "renderedTemplate": "name: pull-request\non:\n  pull_request:\n    branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        node: [ '14', '16']\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n      - name: Set up node \n        uses: actions/setup-node@v2\n        with:\n          node-version: ${{ matrix.node }}\n      - name: Install dependencies\n        run: npm install\n      - name: Run tests\n        run: npm test\n"
+    },
+    {
+      "contextSelector": "repos.github-tools",
+      "template": "github/workflows/npm-test.yaml.njk",
+      "destination": {
+        "type": "tpd-github",
+        "params": {
+          "repo": "gitops-toolbox/github-tools",
+          "filepath": ".github/workflows/npm-test.yaml"
+        }
+      },
+      "tags": {},
+      "templateData": {
+        "context": {},
+        "meta": {
+          "__mapping": "mappings/gitconfigs.js",
+          "__template": "templates/github/workflows/npm-test.yaml.njk"
+        }
+      },
+      "renderedTemplate": "name: pull-request\non:\n  pull_request:\n    branches: [ main ]\njobs:\n  build:\n    runs-on: ubuntu-latest\n    strategy:\n      matrix:\n        node: [ '14', '16']\n    steps:\n      - name: Check out code\n        uses: actions/checkout@v2\n      - name: Set up node \n        uses: actions/setup-node@v2\n        with:\n          node-version: ${{ matrix.node }}\n      - name: Install dependencies\n        run: npm install\n      - name: Run tests\n        run: npm test\n"
+    }
+  ]
+}
