@@ -31,7 +31,7 @@ tap.test('Given gitconfigs base dir', (t) => {
 
     const result = execSync(`${tp} generate --just-mapping gitconfigs.js`, {
       encoding: 'utf-8',
-      env: { TP_BASE_DIR: 'gitconfigs' },
+      env: { ...process.env, TP_BASE_DIR: 'gitconfigs' },
     });
 
     t.strictSame(
@@ -45,7 +45,7 @@ tap.test('Given gitconfigs base dir', (t) => {
 
     const result = execSync(`${tp} generate gitconfigs.js`, {
       encoding: 'utf-8',
-      env: { TP_BASE_DIR: 'gitconfigs', TP_OUTPUT: 'json' },
+      env: { ...process.env, TP_BASE_DIR: 'gitconfigs', TP_OUTPUT: 'json' },
     });
 
     t.strictSame(
