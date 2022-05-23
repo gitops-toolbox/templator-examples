@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/gitops-toolbox/templator-examples#readme",
   "devDependencies": {
-    "@gitops-toolbox/templator": "^0.5.0",
+    "@gitops-toolbox/templator": "^0.6.0",
     "tap": "^15.0.10"
   },
   "tap": {
